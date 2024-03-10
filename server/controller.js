@@ -14,5 +14,23 @@ module.exports = {
             res.status(200).send(dbRes[0])
         })
         .catch(err => console.log(err))
+    },
+    shownKarma: (req, res) => {
+        sequelize.query(`
+            SELECT * FROM tasks
+            ORDER BY date ASC;
+        `).then(dbRes => {
+            res.status(200).send(dbRes[0])
+        }).catch(err => console.log(err))
+    },
+    deleteKarma: (req, res) => {
+        let {id} = req.params
+        sequelize.query(`
+            DELETE FROM karma WHERE id = ${id};
+            SELECT * FROM karma;
+            ORDER BY date ASC;
+        `).then(dbRes => {
+            res.status(200).send(dbRes[0])
+        })
     }
 }
