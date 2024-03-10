@@ -32,5 +32,20 @@ module.exports = {
         `).then(dbRes => {
             res.status(200).send(dbRes[0])
         })
+    },
+    addUsers: (req, res) => {
+        const {firstName, lastName, userName, passWord} = req.body
+        sequelize.query(`
+            INSERT INTO users (firstName, lastName, userName, passWord)
+            VALUES (
+                '${firstName}',
+                '${lastName}',
+                '${userName}',
+                '${passWord}'
+            )
+            RETURNING *;
+        `).then(dbRes => {
+            res.status(200).send(dbRes[0])
+        }).catch(err => console.log(err))
     }
 }
