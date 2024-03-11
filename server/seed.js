@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS users;
     CREATE TABLE karma (
         id SERIAL PRIMARY KEY,
         text VARCHAR(255),
-        users_id INT REFERENCES users(user_id)
+        user_id INT REFERENCES users(user_id)
     );
     `).then(() => {
         console.log(`DB has been seeded!`)

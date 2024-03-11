@@ -30,7 +30,7 @@ const postUser = (e) => {
        passWord: passWordInput.value
     }
 
-    axios.post('http://localhost:4000/api/users', newUser)
+    axios.post('http://localhost:4000/api/user', newUser)
         .then(res => {
             console.log(res.data)
             alert("Your info has been submitted!")

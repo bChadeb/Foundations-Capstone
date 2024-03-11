@@ -14,7 +14,7 @@ app.use(cors())
 app.post('/api/seed', seed)
 
 app.post('/api/users', getUsers)
-app.post('/api/users', addUsers)
+app.post('/api/user', addUsers)
 app.post('/api/karma', addKarma)
 app.get('/api/list', shownKarma)
 app.delete('/api/karma/:id', deleteKarma)

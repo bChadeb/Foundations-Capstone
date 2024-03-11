@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./reset.css">
     <title>Good Karma</title>
 </head>
 <body>
-    <header>
+    <header id="mainHeader">
         <h2>Grab some Karma</h2>
         <nav>
-            <a href="./log-in.html">Karma</a>
-            <a href="./index.html">Add Karma</a>
+            <a id="loginBtn" href="#">Log in</a>
         </nav>
+        <button id="signOutBtn">Sign out</button>
     </header>
+
+    <div id="displayedKarma"></div>
 
     <form id="karma-form" action="">
         <input id="karma" type="text" placeholder="Name of Karma">
         <button>Add karma</button>
     </form>
+
 
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./index.js"></script>

@@ -2,12 +2,13 @@ const sequelize = require('./database.js')
 
 module.exports = {
     addKarma: (req, res) => {
-        const {text} = req.body
+        const {text, user_id} = req.body
 
         sequelize.query(`
-            INSERT INTO karma (text)
+            INSERT INTO karma (text, user_id)
             VALUES (
-                '${text}'
+                '${text}',
+                '${user_id}'
             )
             RETURNING *;
         `).then(dbRes => {
@@ -17,8 +18,7 @@ module.exports = {
     },
     shownKarma: (req, res) => {
         sequelize.query(`
-            SELECT * FROM tasks
-            ORDER BY date ASC;
+            SELECT * FROM karma
         `).then(dbRes => {
             res.status(200).send(dbRes[0])
         }).catch(err => console.log(err))
@@ -28,7 +28,6 @@ module.exports = {
         sequelize.query(`
             DELETE FROM karma WHERE id = ${id};
             SELECT * FROM karma;
-            ORDER BY date ASC;
         `).then(dbRes => {
             res.status(200).send(dbRes[0])
         })
