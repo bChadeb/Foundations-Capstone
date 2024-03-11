@@ -9,14 +9,20 @@
 <body>
     <header>
        <h3>Sign up</h3>
-        <form action="">
+        <form id="signUpForm" action="">
             <input id="First-name" type="text" placeholder="First name">
             <input type="text" id="Last-name" placeholder="Last name">
             <input type="text" id="User-name" placeholder="Username">
             <input type="text" id="Pass-word" placeholder="Password">
-            <button>Submit</button>
+            <button id="subButton">Submit</button>
         </form>
+        <nav>
+            <a href="log-in.html">Back to Log in</a>
+        </nav>
     </header>
     
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="./sign-up.js"></script>
 </body>
 </html>

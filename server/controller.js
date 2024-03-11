@@ -47,5 +47,14 @@ module.exports = {
         `).then(dbRes => {
             res.status(200).send(dbRes[0])
         }).catch(err => console.log(err))
+    },
+    getUsers: (req, res) => {
+        console.log(req.body)
+        const {userName, passWord} = req.body
+        sequelize.query(`
+            SELECT * FROM users WHERE username='${userName}' AND password='${passWord}';
+        `).then(dbRes => {
+            res.status(200).send(dbRes[0])
+        }).catch(err => console.log(err))
     }
 }

@@ -17,6 +17,11 @@ const postKarma = (e) => {
         .catch(err => console.log(err))
 }
 
+const init = function(e) {
+    console.log(localStorage.getItem('correctUser'))
+}
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    init()
+})
 karmaForm.addEventListener('submit', postKarma)
