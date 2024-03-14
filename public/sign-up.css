@@ -1,18 +1,14 @@
-/* index.css */
-
-/* Resetting default browser styles */
 body, h3 {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1; /* Set background color for the whole page */
+    background-color: #f1f1f1; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Styling the form */
 #signUpForm {
     width: 300px;
     background: #ffffff;

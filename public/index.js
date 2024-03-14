@@ -74,7 +74,7 @@ const grabKarma = () => {
 const signOut = () => {
     if(localStorage.getItem('correctUser')){
         localStorage.removeItem('correctUser')
-        alert('You did it')
+        alert('You successfully signed out')
         yourKarma.innerHTML = ''
     //     document.getElementsByClassName('karma-card').remove 
     //     document.getElementsByClassName('').remove
